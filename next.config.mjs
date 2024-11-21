@@ -3,7 +3,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // matching all API routes
         source: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
@@ -14,11 +13,11 @@ const nextConfig = {
       }
     ]
   },
-  images: {
-    domains: ['backend-1h4q.onrender.com'],
-  },
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    NEXT_PUBLIC_API_URL: 'https://backend-1h4q.onrender.com',
+  }
 };
 
-export default nextConfig; 
+export default nextConfig;
